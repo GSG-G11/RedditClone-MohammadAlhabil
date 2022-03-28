@@ -16,7 +16,7 @@ module.exports = ({ body }, res, next) => {
       return hashPassword(password);
     })
     .then((hashedPassword) => createNewUserQuery({ username, email, password: hashedPassword }))
-    .then(({ rows }) => signToken(rows[0].id))
+    .then(({ rows }) => signToken(rows[0]))
     .then((token) => res.status(201).cookie('access_token', token).json({ message: 'User added successfully', status: 201 }))
     .catch((err) => err.details ? next(customError(err.details[0].message, 400)) : next(err));
 };
