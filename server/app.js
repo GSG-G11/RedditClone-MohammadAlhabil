@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser');
 const router = require('./routes');
 
 const app = express();
-
 app.set('port', process.env.PORT || 3000);
 app.disable('x-powered-by');
 app.use(compression());
