@@ -7,6 +7,7 @@ const {
 
 const {
   signupPage,
+  loginPage,
 } = require('./pages');
 
 module.exports = {
@@ -16,4 +17,5 @@ module.exports = {
   login,
   logout,
   signupPage,
+  loginPage,
 };

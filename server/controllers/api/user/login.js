@@ -17,6 +17,6 @@ module.exports = ({ body }, res, next) => {
       if (!isMatch) throw customError('Wrong Password', 400);
       return signToken(user);
     })
-    .then((token) => res.status(201).cookie('access_token', token).json({ message: 'User logged successfully', status: 201 }))
+    .then((token) => res.status(201).cookie('access_token', token, { httpOnly: true }).json({ message: 'User logged successfully', status: 201 }))
     .catch((err) => err.details ? next(customError(err.details[0].message, 400)) : next(err));
 };
