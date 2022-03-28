@@ -1,9 +1,13 @@
 const { clientError, serverError } = require('./error');
-const {   
+const {
   signup,
   login,
-  logout, 
+  logout,
 } = require('./api');
+
+const {
+  signupPage,
+} = require('./pages');
 
 module.exports = {
   clientError,
@@ -11,4 +15,5 @@ module.exports = {
   signup,
   login,
   logout,
+  signupPage,
 };
