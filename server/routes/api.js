@@ -6,6 +6,9 @@ const {
   logout,
   addPost,
   allPosts,
+  getPostComments,
+  addComment,
+  deleteComment,
 } = require('../controllers');
 
 const { checkLoggedIn } = require('../middleware');
@@ -13,9 +16,12 @@ const { checkLoggedIn } = require('../middleware');
 apiRouter.post('/signup', signup);
 apiRouter.post('/login', login);
 apiRouter.get('/posts', allPosts);
+apiRouter.get('/comments/:postId', getPostComments);
 
 apiRouter.use(checkLoggedIn);
 apiRouter.get('/logout', logout);
 apiRouter.post('/post', addPost);
+apiRouter.post('/comment', addComment);
+apiRouter.delete('/comment/:commentId', deleteComment);
 
 module.exports = apiRouter;

@@ -12,6 +12,7 @@ const {
   loginValidate,
   signupValidate,
   postValidate,
+  commentValidate,
 } = require('./validation');
 
 module.exports = {
@@ -22,4 +23,5 @@ module.exports = {
   loginValidate,
   signupValidate,
   postValidate,
+  commentValidate,
 };
