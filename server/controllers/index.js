@@ -3,10 +3,13 @@ const {
   signup,
   login,
   logout,
+  addPost,
+  allPosts,
 } = require('./api');
 
 const {
   signupPage,
+  loginPage,
 } = require('./pages');
 
 module.exports = {
@@ -16,4 +19,7 @@ module.exports = {
   login,
   logout,
   signupPage,
+  loginPage,
+  addPost,
+  allPosts,
 };

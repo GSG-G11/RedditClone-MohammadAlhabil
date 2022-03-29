@@ -11,6 +11,7 @@ const {
 const {
   loginValidate,
   signupValidate,
+  postValidate,
 } = require('./validation');
 
 module.exports = {
@@ -20,4 +21,5 @@ module.exports = {
   verifyToken,
   loginValidate,
   signupValidate,
+  postValidate,
 };
