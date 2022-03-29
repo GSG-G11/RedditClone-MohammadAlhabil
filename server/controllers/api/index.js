@@ -7,6 +7,7 @@ const {
 const {
   addPost,
   allPosts,
+  deletePost,
 } = require('./posts');
 
 const {
@@ -21,6 +22,7 @@ module.exports = {
   logout,
   addPost,
   allPosts,
+  deletePost,
   getPostComments,
   addComment,
   deleteComment,

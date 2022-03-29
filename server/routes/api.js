@@ -6,6 +6,7 @@ const {
   logout,
   addPost,
   allPosts,
+  deletePost,
   getPostComments,
   addComment,
   deleteComment,
@@ -21,6 +22,7 @@ apiRouter.get('/comments/:postId', getPostComments);
 apiRouter.use(checkLoggedIn);
 apiRouter.get('/logout', logout);
 apiRouter.post('/post', addPost);
+apiRouter.delete('/post/:postId', deletePost);
 apiRouter.post('/comment', addComment);
 apiRouter.delete('/comment/:commentId', deleteComment);
 
