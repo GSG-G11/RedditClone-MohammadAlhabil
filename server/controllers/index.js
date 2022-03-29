@@ -5,6 +5,9 @@ const {
   logout,
   addPost,
   allPosts,
+  getPostComments,
+  addComment,
+  deleteComment,
 } = require('./api');
 
 const {
@@ -22,4 +25,7 @@ module.exports = {
   loginPage,
   addPost,
   allPosts,
+  getPostComments,
+  addComment,
+  deleteComment,
 };
