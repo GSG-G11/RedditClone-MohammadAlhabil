@@ -27,3 +27,12 @@ loginForm.addEventListener('submit', (e) => {
   }
   postFetch('/api/v1/login', data, loginHandle);
 });
+
+// Check Cookie
+const checkCookieLogin = (data) => {
+  if (data.status === 200) window.location.href = '/index.html';
+};
+
+window.addEventListener('load', () => {
+  getFetch('/api/v1/cookie', checkCookieLogin)
+});
