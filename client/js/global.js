@@ -1,4 +1,4 @@
-// Check Cookie
+// Check Cookiee
 let user;
 const userName = document.querySelector('.user-name');
 const checkCookie = (data) => {
