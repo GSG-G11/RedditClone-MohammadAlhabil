@@ -301,3 +301,116 @@
 .social-controls div:hover{
   background-color: var(--gray);
 }
+
+.wrap-add-post {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.wrap-add-post.show-form {
+  display: flex;
+}
+
+body.show-form{
+  overflow: hidden;
+}
+
+.form-title {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.form-title h2 {
+  font-size: 2rem;
+  margin-bottom: 0px;
+}
+
+
+.form-title i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  color: var(--font);
+  cursor: pointer;
+}
+
+.form-title i:hover {
+  border-radius: 8px;
+  background-color: var(--gray);
+}
+
+.wrap-my-posts {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  overflow: hidden;
+  color: var(--font);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.wrap-my-posts.show-form {
+  display: flex;
+}
+
+.wrap-title-content-posts {
+  position: relative;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  height: 500px;
+  width: 500px;
+}
+
+.title-my-posts {
+  font-size: 1.3rem;
+  padding: 20px 30px;
+}
+
+.title-my-posts i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-my-posts {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.close-my-posts:hover {
+  background-color: var(--gray);
+  border-radius: 8px;
+}
+
+.my-posts {
+  padding: 0 30px;
+  width: 100%;
+  height: 430px;
+  overflow: auto;
+}

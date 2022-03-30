@@ -9,6 +9,7 @@ const {
   getPostComments,
   addComment,
   deleteComment,
+  getUserInfo,
 } = require('./api');
 
 const {
@@ -30,4 +31,5 @@ module.exports = {
   getPostComments,
   addComment,
   deleteComment,
+  getUserInfo,
 };

@@ -16,6 +16,10 @@ const {
   deleteCommentQuery,
 } = require('./comments');
 
+const {
+  getUserInfoQuery,
+} = require('./users');
+
 module.exports = {
   checkUsernameQuery,
   checkEmailQuery,
@@ -26,4 +30,5 @@ module.exports = {
   getPostCommentsQuery,
   addCommentQuery,
   deleteCommentQuery,
+  getUserInfoQuery,
 };
