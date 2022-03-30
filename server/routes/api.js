@@ -10,6 +10,7 @@ const {
   getPostComments,
   addComment,
   deleteComment,
+  getUserInfo,
 } = require('../controllers');
 
 const { checkLoggedIn, checkCookie } = require('../middleware');
@@ -19,11 +20,12 @@ apiRouter.post('/login', login);
 apiRouter.get('/posts', allPosts);
 apiRouter.get('/comments/:postId', getPostComments);
 apiRouter.get('/cookie', checkCookie);
+apiRouter.get('/user/:userId', getUserInfo);
 
 apiRouter.use(checkLoggedIn);
 apiRouter.get('/logout', logout);
 apiRouter.post('/post', addPost);
-apiRouter.delete('/post/:postId', deletePost);
+apiRouter.get('/post/:postId', deletePost);
 apiRouter.post('/comment', addComment);
 apiRouter.delete('/comment/:commentId', deleteComment);
 

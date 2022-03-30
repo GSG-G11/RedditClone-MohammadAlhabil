@@ -1,6 +1,10 @@
 // Check Cookie
+let user;
+const userName = document.querySelector('.user-name');
 const checkCookie = (data) => {
+  user = data.user;
   if (data.status === 200) {
+    userName.textContent = data.user.username;
     document.querySelector('.logged').classList.toggle('show');
     document.querySelector('.not-logged').classList.toggle('hide');
   }

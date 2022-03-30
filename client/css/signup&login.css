@@ -1,4 +1,4 @@
-main {
+.wrap-container {
   margin-top: 70px;
   height: calc(100vh - 70px);
   width: 100%;
@@ -39,7 +39,7 @@ form .input label {
   margin-bottom: 4px;
 }
 
-form .input input {
+form .input input, textarea {
   width: 100%;
   padding: 10px;
   color: var(--font);
@@ -74,4 +74,9 @@ form button {
   color: var(--main);
   font-size: 1.1rem;
   margin-bottom: 20px;
+}
+
+textarea {
+  height: 200px;
+  border-radius: 16px;
 }

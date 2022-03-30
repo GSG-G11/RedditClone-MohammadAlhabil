@@ -162,11 +162,58 @@ header .container {
 }
 
 .user-btn {
-  width: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
   padding: 8px;
   border: 1px solid var(--border);
   border-radius: 8px;
   cursor: pointer;
+}
+
+.user-card {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.wrap-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.my-posts-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.user-card.show {
+  display: block;
+}
+
+.user-img-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  min-height: 50px;
+  background-color: var(--gray);
+  border-radius: 50%;
+}
+
+.arrow-rotate {
+  transform: rotate(180deg);
 }
 
 .btn {
@@ -237,6 +284,10 @@ header .container {
 
 .show {
   display: block;
+}
+
+.flex {
+  display: flex;
 }
 
 .hide {

@@ -16,6 +16,10 @@ const {
   deleteComment,
 } = require('./comments');
 
+const {
+  getUserInfo,
+} = require('./users');
+
 module.exports = {
   signup,
   login,
@@ -26,4 +30,5 @@ module.exports = {
   getPostComments,
   addComment,
   deleteComment,
+  getUserInfo,
 };

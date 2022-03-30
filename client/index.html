@@ -8,6 +8,7 @@
   <link rel="icon" href="https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png" type="image/svg+xml" />
   <!-- css files -->
   <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/signup&login.css">
   <link rel="stylesheet" href="../css/home.css">
   <!-- Font Awesome -->
   <link
@@ -20,6 +21,26 @@
   <title>Reddit</title>
 </head>
 <body>
+  <div class="wrap-add-post">
+    <div class="wrap-add-post-form">
+      <form id="add-post-form">
+        <div class="form-title">
+          <h2>Add Your Post</h2>
+          <i class="fa-solid fa-xmark close"></i>
+        </div>
+        <p id="error"></p>
+        <div class="input">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" placeholder="Title"/>
+        </div>
+        <div class="input">
+          <label for="content">Content</label>
+          <textarea type="text" name="content" id="content" placeholder="Content"></textarea>
+        </div>
+        <button>Add Post</button>
+      </form>
+    </div>
+  </div>
   <div class="loading">Loading...</div>
   <header>
     <div class="container">
@@ -38,8 +59,19 @@
           <a href="#" id="add-post" class="signup btn">Add Post</a>
         </div>
         <div class="user-btn">
+          <div class="user-card">
+            <div class="wrap-info">
+              <div class="user-img-card"><i class="fa-regular fa-user"></i></div>
+              <div class="user-info">
+                <span class="username"></span>
+                <span class="email"></span>
+              </div>
+            </div>
+            <div class="my-posts-btn">My Posts</div>
+          </div>
           <i class="fa-regular fa-user"></i>
-          <i class="fa-solid fa-angle-down"></i>
+          <span class="user-name"></span>
+          <i class="fa-solid fa-angle-down arrow"></i>
         </div>
         <label id="theme-switcher" class="switch">
           <input id="them-input" type="checkbox" />
@@ -203,8 +235,41 @@
       </div>
     </div>
   </main>
+
+  <section class="wrap-my-posts">
+    <div class="wrap-title-content-posts">
+      <div class="title-my-posts"><i class="fa-solid fa-xmark close-my-posts"></i> My Posts</div>
+        <div class="my-posts">
+          <template id="my-post-template">
+            <div class="wrap-post">
+              <div class="votes">
+                <i class="fa-solid fa-up-long"></i>
+                <p class="vote-count">14</p>
+                <i class="fa-solid fa-down-long"></i>
+              </div>
+              <div class="post">
+                <div class="post-publisher">
+                  <img class="post-publisher-img" src="https://a.thumbs.redditmedia.com/E0Bkwgwe5TkVLflBA7WMe9fMSC7DV2UOeff-UpNJeb0.png" alt="">
+                  <p class="post-publisher-name">r/news</p>
+                  <i class="fa-solid fa-trash-can delete-post"></i>
+                </div>
+                <p class="title">Lorem ipsum dolor</p>
+                <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet molestias tempore quaerat facere architecto quam sed eius dolor commodi debitis vel, officia, excepturi nemo, perferendis autem. Quod fugit nobis tempore!</p>
+                <div class="social-controls">
+                  <div class="comment"><i class="fa-regular fa-message"></i> Comment</div>
+                  <div class="share"><i class="fa-regular fa-share-from-square"></i> Share</div>
+                  <div class="save"><i class="fa-regular fa-bookmark"></i> Save</div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+    </div>
+  </section>
+
   <script src="../js/global.js"></script>
   <script src="../js/getFetch.js"></script>
+  <script src="../js/postFetch.js"></script>
   <script src="../js/home.js"></script>
 </body>
 </html>
