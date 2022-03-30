@@ -28,3 +28,13 @@ signupForm.addEventListener('submit', (e) => {
   }
   postFetch('/api/v1/signup', data, signupHandle);
 });
+
+
+// Check Cookie
+const checkCookieSignup = (data) => {
+  if (data.status === 200) window.location.href = '/index.html';
+};
+
+window.addEventListener('load', () => {
+  getFetch('/api/v1/cookie', checkCookieSignup)
+});

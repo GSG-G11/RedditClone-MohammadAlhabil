@@ -1,3 +1,15 @@
+// Check Cookie
+const checkCookie = (data) => {
+  if (data.status === 200) {
+    document.querySelector('.logged').classList.toggle('show');
+    document.querySelector('.not-logged').classList.toggle('hide');
+  }
+};
+
+window.addEventListener('load', () => {
+  getFetch('/api/v1/cookie', checkCookie)
+});
+
 // Error
 const handleErrPages = (status) => {
   if (status === 404) {
@@ -23,3 +35,11 @@ const switchTheme = () => {
   localStorage.setItem("theme", JSON.stringify(switchToTheme));
 };
 themeSwitcher.addEventListener('click', switchTheme);
+
+// Log Out
+const logout = (data) => {
+  if (data.status === 205) window.location.href = '/index.html';
+};
+
+const logoutBtn = document.querySelector('#logout');
+if (logoutBtn) logoutBtn.addEventListener('click', () => getFetch('/api/v1/logout', logout));

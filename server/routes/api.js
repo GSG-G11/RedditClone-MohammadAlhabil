@@ -12,12 +12,13 @@ const {
   deleteComment,
 } = require('../controllers');
 
-const { checkLoggedIn } = require('../middleware');
+const { checkLoggedIn, checkCookie } = require('../middleware');
 
 apiRouter.post('/signup', signup);
 apiRouter.post('/login', login);
 apiRouter.get('/posts', allPosts);
 apiRouter.get('/comments/:postId', getPostComments);
+apiRouter.get('/cookie', checkCookie);
 
 apiRouter.use(checkLoggedIn);
 apiRouter.get('/logout', logout);
