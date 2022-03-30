@@ -98,19 +98,33 @@ const myPosts = document.querySelector('.my-posts');
 const tempMyPost = document.querySelector('#my-post-template');
 const myPostsBtn = document.querySelector('.my-posts-btn');
 const closeMyPosts = document.querySelector('.close-my-posts');
+
 const showMyPosts = (data) => {
   if (data.status === 200) {
-    myPosts.textContent = '';
-    data.user.forEach((post) => {
-      const clone = tempMyPost.content.cloneNode(true);
-      clone.querySelector('.wrap-post').setAttribute('data-index', post.postid);
-      clone.querySelector('.vote-count').textContent = Math.floor(Math.random() * 101);
-      clone.querySelector('.post-publisher-name').textContent = post.username;
-      clone.querySelector('.title').textContent = post.title;
-      clone.querySelector('.content').textContent = post.content;
-      clone.querySelector('.delete-post').setAttribute('data-index', post.postid);
-      myPosts.insertBefore(clone, myPosts.children[0]);
-    });
+    if (!data.user.length) {
+      myPosts.textContent = '';
+      const text = document.createElement('div');
+      text.textContent = 'You have no posts yet';
+      myPosts.appendChild(text);
+    } else {
+      myPosts.textContent = '';
+      data.user.forEach((post) => {
+        if (post.title && post.content) {
+          const clone = tempMyPost.content.cloneNode(true);
+          clone.querySelector('.wrap-post').setAttribute('data-index', post.postid);
+          clone.querySelector('.vote-count').textContent = Math.floor(Math.random() * 101);
+          clone.querySelector('.post-publisher-name').textContent = post.username;
+          clone.querySelector('.title').textContent = post.title;
+          clone.querySelector('.content').textContent = post.content;
+          clone.querySelector('.delete-post').setAttribute('data-index', post.postid);
+          myPosts.insertBefore(clone, myPosts.children[0]);
+        } else {
+          const text = document.createElement('div');
+          text.textContent = 'You have no posts yet';
+          myPosts.appendChild(text);
+        }
+      });
+    }
   } else handleErrPages(500);
 };
 

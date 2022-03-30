@@ -178,7 +178,7 @@ header .container {
   position: absolute;
   right: 0;
   top: 110%;
-  background-color: var(--background);
+  background-color: var(--white);
   border: 1px solid var(--border);
   padding: 10px;
   border-radius: 8px;
@@ -189,13 +189,20 @@ header .container {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
 }
 
 .my-posts-btn {
   margin-top: 10px;
   width: 100%;
   padding: 8px;
-  border-top: 1px solid var(--border);
+  border-radius: 8px;
+  transition: background-color .2s ease-in-out;
+}
+
+.my-posts-btn:hover {
+  background-color: var(--gray);
 }
 
 .user-card.show {

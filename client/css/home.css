@@ -409,6 +409,7 @@ body.show-form{
 }
 
 .my-posts {
+  position: relative;
   padding: 0 30px;
   width: 100%;
   height: 430px;
